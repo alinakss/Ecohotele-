@@ -1,0 +1,357 @@
+<!ECOHOTELE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Innowacje ekologiczne w hotelarstwie</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary: #2b7a78;
+      --secondary: #3aafa9;
+      --light: #feffff;
+      --dark: #17252a;
+      --accent: #def2f1;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f9f6;
+      margin: 0;
+      padding: 0;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: var(--light);
+      padding: 3rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.2;
+      z-index: 0;
+    }
+    
+    header * {
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      font-weight: 700;
+    }
+    
+    .header-description {
+      max-width: 800px;
+      margin: 1rem auto 0;
+      font-size: 1.1rem;
+    }
+    
+    .tabs {
+      display: flex;
+      justify-content: center;
+      background-color: var(--light);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .tab {
+      padding: 1rem 2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      color: var(--dark);
+      border-bottom: 3px solid transparent;
+    }
+    
+    .tab:hover {
+      background-color: var(--accent);
+      color: var(--primary);
+    }
+    
+    .tab.active {
+      border-bottom: 3px solid var(--primary);
+      color: var(--primary);
+      background-color: var(--accent);
+    }
+    
+    .tab-content {
+      display: none;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .tab-content.active {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .category-title {
+      color: var(--primary);
+      margin-top: 2rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid var(--secondary);
+      display: flex;
+      align-items: center;
+    }
+    
+    .category-title i {
+      margin-right: 0.8rem;
+      font-size: 1.5rem;
+    }
+    
+    .sources-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .source {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .source:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    }
+    
+    .source-image {
+      height: 180px;
+      background-size: cover;
+      background-position: center;
+    }
+    
+    .source-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .source h3 {
+      margin: 0 0 1rem;
+      color: var(--primary);
+      font-size: 1.3rem;
+    }
+    
+    .source p {
+      margin: 0 0 1.5rem;
+      flex-grow: 1;
+    }
+    
+    .source-link {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.6rem 1.2rem;
+      background-color: var(--primary);
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+      font-weight: 500;
+      align-self: flex-start;
+    }
+    
+    .source-link:hover {
+      background-color: var(--secondary);
+    }
+    
+    .source-link i {
+      margin-left: 0.5rem;
+    }
+    
+    footer {
+      background-color: var(--dark);
+      color: var(--light);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    @media (max-width: 768px) {
+      .tabs {
+        flex-wrap: wrap;
+      }
+      
+      .tab {
+        flex: 1 0 auto;
+        padding: 0.8rem 1rem;
+        text-align: center;
+      }
+      
+      .sources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Innowacje Ekologiczne w Hotelarstwie</h1>
+    <p class="header-description">Przewodnik ten zawiera starannie wyselekcjonowane źródła internetowe wspierające wdrażanie innowacji ekologicznych w hotelarstwie. Jego celem jest dostarczenie praktycznych narzędzi, certyfikatów, danych oraz dobrych praktyk możliwych do zastosowania w branży. Każde źródło zostało ocenione pod kątem przydatności, wiarygodności i zakresu tematycznego.</p>
+  </header>
+
+  <div class="tabs">
+    <div class="tab active" data-tab="certifications">Certyfikacje</div>
+    <div class="tab" data-tab="reports">Raporty i dane</div>
+    <div class="tab" data-tab="organizations">Organizacje</div>
+    <div class="tab" data-tab="tools">Narzędzia</div>
+  </div>
+
+  <div class="tab-content active" id="certifications">
+    <h2 class="category-title"><i class="fas fa-certificate"></i> Certyfikaty ekologiczne</h2>
+    <div class="sources-grid">
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1554469384-e58fac16e23a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>Green Key</h3>
+          <p>Międzynarodowy program certyfikacji ekologicznej, który promuje odpowiedzialność środowiskową w hotelarstwie. Na stronie znajdują się kryteria przyznawania certyfikatu oraz przykłady działań, które spełniają standardy (np. energooszczędność, segregacja odpadów, lokalne zaopatrzenie).</p>
+          <a href="https://www.greenkey.global/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1501183638710-841dd1904471?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>EU Ecolabel</h3>
+          <p>Oficjalne europejskie oznakowanie ekologiczne. Strona zawiera wykaz wymagań środowiskowych, które muszą spełniać obiekty hotelowe, m.in. dotyczące oszczędzania zasobów, zarządzania energią i wodą, oraz wpływu na lokalną bioróżnorodność. Pomocne przy tworzeniu własnych standardów.</p>
+          <a href="https://environment.ec.europa.eu/topics/circular-economy/eu-ecolabel-home_en" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>Travelife</h3>
+          <p>Program certyfikacyjny dla hoteli i operatorów turystycznych. Zawiera szczegółowe wytyczne dotyczące zrównoważonego zarządzania, szkoleń pracowników, współpracy z lokalną społecznością i redukcji wpływu środowiskowego. Przydatny dla hoteli wdrażających politykę CSR.</p>
+          <a href="https://travelifestaybetter.com/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="reports">
+    <h2 class="category-title"><i class="fas fa-chart-bar"></i> Raporty i analizy</h2>
+    <div class="sources-grid">
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>UNWTO – Światowa Organizacja Turystyki</h3>
+          <p>Oficjalna agenda ONZ ds. turystyki, oferująca raporty, strategie i zalecenia dla rozwoju zrównoważonej turystyki. Zawiera m.in. dane o emisjach CO₂ z sektora hotelarskiego, przewodniki po najlepszych praktykach oraz materiały wspierające wdrażanie innowacyjnych rozwiązań proekologicznych.</p>
+          <a href="https://www.unwto.org/sustainable-development" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>EEA – Europejska Agencja Środowiska</h3>
+          <p>Oferuje analizy wpływu turystyki na środowisko, w tym szczegółowe raporty na temat emisji, zużycia energii i wody przez hotele. Umożliwia identyfikację obszarów wymagających poprawy i pozwala opracować strategie ekologicznego zarządzania obiektem hotelarskim.</p>
+          <a href="https://www.eea.europa.eu" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>WTTC – Światowa Rada ds. Podróży i Turystyki</h3>
+          <p>Publikuje globalne raporty i inicjatywy wspierające zrównoważony rozwój turystyki. Dostarcza danych rynkowych, prognoz, a także konkretnych przykładów innowacyjnych praktyk środowiskowych w sektorze hotelarskim. Stanowi cenne źródło do analizy trendów.</p>
+          <a href="https://wttc.org/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="organizations">
+    <h2 class="category-title"><i class="fas fa-users"></i> Organizacje branżowe</h2>
+    <div class="sources-grid">
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1571624436279-b272aff752b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>Sustainable Hospitality Alliance</h3>
+          <p>Organizacja zrzeszająca liderów branży hotelarskiej w działaniach na rzecz zrównoważonego rozwoju. Publikuje przewodniki, analizy i narzędzia wspierające ekologiczną transformację hoteli, w tym w zakresie zarządzania odpadami, efektywności energetycznej i społecznej odpowiedzialności.</p>
+          <a href="https://sustainablehospitalityalliance.org/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tab-content" id="tools">
+    <h2 class="category-title"><i class="fas fa-tools"></i> Praktyczne narzędzia</h2>
+    <div class="sources-grid">
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>EarthCheck</h3>
+          <p>System benchmarkingowy i certyfikacyjny dla obiektów turystycznych. Umożliwia monitorowanie postępów w zakresie zrównoważonego rozwoju, oferując narzędzia analityczne, raporty i indywidualne wskaźniki efektywności środowiskowej. Wspiera podejmowanie decyzji opartych na danych.</p>
+          <a href="https://earthcheck.org/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+
+      <div class="source">
+        <div class="source-image" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+        <div class="source-content">
+          <h3>Bookdifferent.com</h3>
+          <p>Platforma rezerwacyjna skupiająca się na hotelach posiadających certyfikaty ekologiczne. Pozwala na ocenę wpływu hotelu na środowisko (w tym ślad węglowy na nocleg), ułatwiając wybór obiektów wspierających zrównoważoną turystykę. Przydatna dla analizy konkurencji.</p>
+          <a href="https://www.bookdifferent.com/" target="_blank" class="source-link">Przejdź do źródła <i class="fas fa-external-link-alt"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Przewodnik po innowacjach ekologicznych w hotelarstwie</p>
+    <p>Wszystkie źródła zostały starannie wyselekcjonowane pod kątem wiarygodności i praktycznej przydatności</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          // Remove active class from all tabs and contents
+          document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+          
+          // Add active class to clicked tab
+          tab.classList.add('active');
+          
+          // Show corresponding content
+          const tabId = tab.getAttribute('data-tab');
+          document.getElementById(tabId).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
